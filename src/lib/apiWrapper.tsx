@@ -81,27 +81,8 @@ async function getMe(token: string): Promise<{ data: any; error: string | undefi
     return { data, error };
 }
 
-
-
-
 export {
     getMe,
     login,
     register
 }
-
-// async function getMe(token:string): Promise<APIResponse<UserType>> {
-//     let data;
-//     let error;
-//     try {
-//         const response = await apiClientTokenAuth(token).get(userEndpoint)
-//         data = response.data
-//     } catch(err) {
-//         if (axios.isAxiosError(err)){
-//             error = err.response?.data.error
-//         } else {
-//             error = 'Something went wrong'
-//         }
-//     }
-//     return { data, error }
-// }
