@@ -36,6 +36,7 @@ export default function Home({isLoggedIn, currentUser}: HomeProps) {
     >
       <div>
         <h2 className="mb-4">Random Dog Fact</h2>
+        <p>*Up at the top, Click "Add Facts!", Copy and Paste the fact and show all your friends the fact you learned today!</p>
         <p>{fact}</p>
         <Button variant="primary" onClick={fetchRandomDogFact}>Fact Me!</Button>
       </div>
@@ -43,4 +44,3 @@ export default function Home({isLoggedIn, currentUser}: HomeProps) {
     </>
   );
 };
-

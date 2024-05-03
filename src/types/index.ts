@@ -11,8 +11,9 @@ export type CategoryType = 'primary' | 'secondary' | 'success' | 'danger' | 'war
 
 export type TokenType = {
     token:string,
-    tokenExpiration: string
+    // tokenExpiration: string
 }
+
 export type UserType = {
     id: number, 
     firstName: string,
@@ -20,4 +21,17 @@ export type UserType = {
     username: string,
     email: string,
     dateCreated: string
+}
+
+export type FactType = {
+    title: string
+    id: number,
+    fact: string,
+    dateCreated: string,
+    user: UserType
+}
+ 
+export type FactFormDataType = {
+    title: string,
+    fact: string
 }

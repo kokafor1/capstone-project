@@ -20,6 +20,7 @@ export default function Navigation({ isLoggedIn, logUserOut }: NavigationProps){
                     <Nav className='me-auto'>
                         {isLoggedIn ? (
                             <>
+                                <Nav.Link as={Link} to='/dog_facts'>Add Facts!</Nav.Link>
                                <Nav.Link as={Link} to='/'>Fun Fact</Nav.Link>
                                 <Nav.Link as={Link} to='/' onClick={() => logUserOut()}>Log Out</Nav.Link>
                             </>

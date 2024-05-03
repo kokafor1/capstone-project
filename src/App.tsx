@@ -8,6 +8,8 @@ import Login from "./views/Login";
 import SignUp from "./views/SignUp";
 import { CategoryType, UserType } from "./types";
 import { getMe } from "./lib/apiWrapper";
+import EditFact from "./views/EditFact";
+import DogTalk from "./views/DogTalks";
 
 export default function App(){
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token') && new Date(localStorage.getItem('tokenExp')||0) > new Date() ? true : false);
@@ -27,7 +29,7 @@ export default function App(){
                 localStorage.setItem('currentUser', JSON.stringify(response.data))
             } else {
                 setIsLoggedIn(false);
-                console.error(response.data);
+                console.error(response);
             }
         }
     }
@@ -48,7 +50,7 @@ export default function App(){
     setIsLoggedIn(false);
     setLoggedInUser(null);
     localStorage.removeItem('token');
-    localStorage.removeItem('tokenExp');
+    // localStorage.removeItem('tokenExp');
     localStorage.removeItem('currentUser');
     flashMessage('You have been logged out', 'dark')
 }
@@ -60,8 +62,10 @@ export default function App(){
         {message && <AlertMessage message={message} category={category} flashMessage={flashMessage} /> }
         <Routes>
           <Route path="/" element={<Home isLoggedIn={isLoggedIn} currentUser={loggedInUser} /> } />
+          <Route path='/dog_facts' element={<DogTalk isLoggedIn={isLoggedIn} currentUser={loggedInUser} flashMessage={flashMessage} />} />
           <Route path="/signup" element={<SignUp flashMessage={flashMessage} /> } />
           <Route path="/login"  element={<Login flashMessage={flashMessage} logUserIn={logUserIn} /> } />
+          <Route path='/edit/:factId' element={<EditFact flashMessage={flashMessage} currentUser={loggedInUser} />} />
         </Routes>
       </Container>
     </>
