@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { FactType, TokenType, UserFormDataType, UserType, FactFormDataType } from '../types';
 
 

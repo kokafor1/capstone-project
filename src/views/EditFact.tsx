@@ -82,7 +82,7 @@ export default function EditFact({flashMessage, currentUser}: EditFactProps) {
                         <Form.Label>Fact Title</Form.Label>
                         <Form.Control name='title' placeholder='Edit Fact Title' value={factToEditData.title} onChange={handleInputChange} />
                         <Form.Label>Fact Body</Form.Label>
-                        <Form.Control as='textarea' name='body' placeholder='Edit Fact Body' value={factToEditData.fact} onChange={handleInputChange} />
+                        <Form.Control as='textarea' name='fact' placeholder='Edit Fact Body' value={factToEditData.fact} onChange={handleInputChange} />
                         <Button className='mt-3 w-50' variant='info' type='submit'>Edit Fact</Button>
                         <Button className='mt-3 w-50' variant='danger' onClick={openModal}>Delete Fact</Button>
                     </Form>
