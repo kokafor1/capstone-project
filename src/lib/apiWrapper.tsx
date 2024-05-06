@@ -2,7 +2,7 @@ import axios from 'axios';
 import { FactType, TokenType, UserFormDataType, UserType, FactFormDataType } from '../types';
 
 
-const baseURL: string = 'http://127.0.0.1:5000'
+const baseURL: string = 'https://capstone-backend-vipd.onrender.com/'
 const userEndpoint: string = '/users'
 const tokenEndpoint: string = '/token'
 const factEndpoint: string = '/dog_facts'
